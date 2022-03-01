@@ -25,4 +25,4 @@ jobs:
           # Artifact name
           name: ArenaDisinfectant
           # A file, directory or wildcard pattern that describes what to upload
-          path: target/arenadisinfectant-*.jar
+          path: out/artifacts/ArenaDisinfectant_jar/ArenaDisinfectant.jar
