@@ -1,3 +1,4 @@
-SecondsToRemoveCrystal: 600
+SecondsToRemoveCrystal: 12000
+SecondsToRemoveItems: 12000
 
-SecondsToRemoveAllBlocks: 600
+SecondsToRemoveAllBlocks: 72000

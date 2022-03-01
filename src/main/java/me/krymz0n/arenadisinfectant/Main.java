@@ -7,6 +7,7 @@ import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.entity.EnderCrystal;
 import org.bukkit.entity.Entity;
+import org.bukkit.entity.Item;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
@@ -41,6 +42,18 @@ public final class Main extends JavaPlugin implements Listener {
                 }
             }
         }, 0L, getConfig().getInt("SecondsToRemoveCrystal") * 20L);
+
+        Bukkit.getScheduler().runTaskTimer(this, () -> {
+            for (World w : Bukkit.getWorlds()) {
+                for (Chunk c : w.getLoadedChunks()) {
+                    for (Entity entity : c.getEntities()) {
+                        if (entity instanceof Item) {
+                            entity.remove();
+                        }
+                    }
+                }
+            }
+        }, 0L, getConfig().getInt("SecondsToRemoveItems") * 20L);
 
 
     }
