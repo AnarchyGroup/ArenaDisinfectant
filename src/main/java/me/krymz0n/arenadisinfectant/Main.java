@@ -23,9 +23,10 @@ public final class Main extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
-        removeBlocks();
+        saveDefaultConfig();
 
         getServer().getPluginManager().registerEvents(this, this);
+        removeBlocks();
 
         Bukkit.getScheduler().runTaskTimer(this, this::purge, 20L, getConfig().getInt("SecondsToRemoveAllBlocks") * 20L);
 
